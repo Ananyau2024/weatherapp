@@ -25,7 +25,7 @@
         return;
       }
 
-      const apiKey = ''; // Replace with your OpenWeatherMap API key
+      const apiKey = '4f6ce99380fb1f37ec46089dea3096b2'; // Replace with your OpenWeatherMap API key
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   
       document.getElementById('loading').style.display = 'block'; // Show loading indicator
@@ -36,6 +36,7 @@
         }
   
         const weatherData = await response.json();
+        console.log(weatherData)
         displayWeather(weatherData);
       } catch (error) {
         document.getElementById('weather-info').innerHTML = `<p>${error.message}</p>`;
